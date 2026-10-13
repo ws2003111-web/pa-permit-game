@@ -1,0 +1,35 @@
+:root{--pink:#ffd6e7;--pink2:#ff8fb8;--mint:#c9f2e3;--mint2:#3cc79a;--sky:#d4ecff;--lav:#e6dcff;--yel:#fff3c4;--ink:#5a4a6b;--red:#ff6b81}
+*{box-sizing:border-box}body{margin:0;font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;background:linear-gradient(160deg,#fff0f6,#eef7ff 50%,#f3fff8);color:var(--ink);min-height:100vh}
+#app{max-width:720px;margin:0 auto;padding:10px 12px 60px}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px 4px;position:sticky;top:0;background:rgba(255,245,250,.9);backdrop-filter:blur(6px);z-index:5;border-radius:0 0 16px 16px}
+.logo{font-weight:800;font-size:20px;cursor:pointer}#hud{font-size:15px;font-weight:700}
+.card{background:#fff;border-radius:22px;padding:16px;margin:12px 0;box-shadow:0 6px 18px rgba(255,143,184,.18)}
+h2{margin:6px 0 10px}.mascot{font-size:64px;text-align:center;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{border:none;border-radius:18px;padding:14px 12px;font-size:16px;font-weight:700;color:var(--ink);cursor:pointer;background:var(--pink);box-shadow:0 4px 0 rgba(0,0,0,.08);transition:transform .1s}
+.btn:active{transform:scale(.96)}.btn.mint{background:var(--mint)}.btn.sky{background:var(--sky)}.btn.lav{background:var(--lav)}.btn.yel{background:var(--yel)}.btn.small{padding:8px 12px;font-size:14px}
+.mode{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:110px;justify-content:center}.mode b{font-size:34px}.mode small{font-weight:400;opacity:.8}
+.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.lv{aspect-ratio:1;border-radius:20px;border:none;font-weight:800;font-size:18px;background:var(--sky);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.lv.done{background:var(--mint)}.lv.lock{background:#eee;opacity:.6}.lv .st{font-size:12px}
+.q{font-weight:700;font-size:17px;line-height:1.4}.qz{color:#9a7fb3;font-size:15px;margin-top:6px}
+.qimg{display:block;max-width:100%;max-height:190px;margin-left:auto!important;margin-right:auto!important;background:#fff;padding:6px;border-radius:12px;margin:10px 0;border:2px dashed var(--pink)}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border-radius:16px;border:2px solid #f3e3ee;background:#fffafd;font-size:15px;cursor:pointer;color:var(--ink)}
+.opt .z{display:block;color:#a08cb5;font-size:13px;margin-top:2px}
+.opt.ok{background:var(--mint);border-color:var(--mint2);animation:pop .4s}.opt.bad{background:#ffe0e6;border-color:var(--red);animation:shake .4s}
+@keyframes pop{50%{transform:scale(1.04)}}@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.story{background:var(--yel);border-radius:18px;padding:14px;margin-top:10px;line-height:1.7;animation:slide .4s}
+.story .tip{margin-top:8px;font-weight:800;color:#d9608f}@keyframes slide{from{opacity:0;transform:translateY(10px)}}
+.flag{background:#ffe9d6;border-radius:12px;padding:8px;font-size:13px;margin-top:8px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:10px}
+.bar{height:10px;background:#f4e6ef;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pink2),#ffc36b)}
+.flip{perspective:1000px;min-height:300px;cursor:pointer}.flip .in{position:relative;min-height:300px;transition:transform .6s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;background:#fff;border-radius:22px;padding:16px;box-shadow:0 6px 18px rgba(255,143,184,.18);overflow:auto}
+.back{transform:rotateY(180deg);background:#f4fff9}
+#toast{position:fixed;left:50%;top:40%;transform:translate(-50%,-50%) scale(0);font-size:70px;pointer-events:none;transition:transform .25s}
+#toast.show{transform:translate(-50%,-50%) scale(1)}
+.fall{position:fixed;top:-40px;font-size:26px;animation:fall 1.4s linear forwards;pointer-events:none}@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.tag{display:inline-block;background:var(--lav);border-radius:10px;padding:2px 8px;font-size:12px;margin-right:4px}
+.list .it{border-bottom:1px dashed #f0d9e6;padding:8px 0;font-size:14px}
+.stat{font-size:28px;font-weight:800;text-align:center}.stat small{display:block;font-size:12px;font-weight:400}
